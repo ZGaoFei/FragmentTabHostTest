@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FragmentTabHost</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="tab_one">tab one</string>
+    <string name="tab_two">tab two</string>
+    <string name="tab_three">tab three</string>
+    <string name="tab_four">tab four</string>
+    <string name="tab_five">tab five</string>
+    <string name="tab_six">tab six</string>
+</resources>
