@@ -6,9 +6,13 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.zhaogaofei.fragmenttabhost.fragment.OneFragment;
 import com.example.zhaogaofei.fragmenttabhost.fragment.ThreeFragment;
@@ -77,8 +81,8 @@ public class BottomNavigationButtonActivity extends AppCompatActivity {
             }
         });
 
-        viewPager.setAdapter(new MyAdapter(getSupportFragmentManager(), fragmentList));
-//        viewPager.setOffscreenPageLimit(2);
+        viewPager.setAdapter(new StateAdapter(getSupportFragmentManager(), fragmentList));
+        viewPager.setOffscreenPageLimit(4);
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -143,6 +147,50 @@ public class BottomNavigationButtonActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             return list.size();
+        }
+    }
+
+    private class StateAdapter extends FragmentStatePagerAdapter {
+
+        private List<Fragment> list;
+
+        public StateAdapter(FragmentManager fm, List<Fragment> list) {
+            super(fm);
+            this.list = list;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return list.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return list.size();
+        }
+    }
+
+    private class MyPagerAdapter extends PagerAdapter {
+
+        @Override
+        public int getCount() {
+            return 0;
+        }
+
+        @Override
+        public boolean isViewFromObject(View view, Object object) {
+            return false;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+            super.destroyItem(container, position, object);
+
+        }
+
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            return super.instantiateItem(container, position);
         }
     }
 }
