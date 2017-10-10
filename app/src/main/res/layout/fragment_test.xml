@@ -2,16 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zhaogaofei.fragmenttabhost.fragment.OneFragment">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="one Fragment" />
+    tools:context="com.example.zhaogaofei.fragmenttabhost.fragment.TestFragment">
 
     <Button
-        android:id="@+id/bt_one_fragment"
+        android:id="@+id/bt_test_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="跳转到下一个页面" />

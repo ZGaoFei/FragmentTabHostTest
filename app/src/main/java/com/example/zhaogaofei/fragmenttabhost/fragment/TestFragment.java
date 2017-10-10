@@ -15,19 +15,19 @@ import android.widget.Button;
 import com.example.zhaogaofei.fragmenttabhost.BottomNavigationButtonActivity;
 import com.example.zhaogaofei.fragmenttabhost.R;
 
-public class OneFragment extends Fragment {
-    private static final String TAG = "OneFragment";
+public class TestFragment extends Fragment {
+    private static final String TAG = "TestFragment";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.e(TAG, "==onCreateView==");
-        View view = inflater.inflate(R.layout.fragment_one, container, false);
-        Button button = (Button) view.findViewById(R.id.bt_one_fragment);
+        View view = inflater.inflate(R.layout.fragment_test, container, false);
+        Button button = (Button) view.findViewById(R.id.bt_test_fragment);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                OneFragment.this.onClick(v);
+                TestFragment.this.onClick(v);
             }
         });
 
@@ -104,4 +104,5 @@ public class OneFragment extends Fragment {
         Intent intent = new Intent(getActivity(), BottomNavigationButtonActivity.class);
         startActivity(intent);
     }
+
 }
